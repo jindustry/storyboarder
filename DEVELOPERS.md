@@ -1,4 +1,4 @@
-# Notes for Developers
+npm # Notes for Developers
 
 Tested with node v6.1.0.
 
@@ -38,7 +38,6 @@ To compile only (Shot Generator, Shot Explorer, and Shot Generator XR)
 
 To compile and build Storyboarder.app:
 
-    $ sudo npm install -g electron-builder
     $ npm run dist:mac    # Mac only
     $ npm run dist:win    # Windows only
     $ npm run dist:linux  # Linux only
@@ -46,7 +45,7 @@ To compile and build Storyboarder.app:
 
 For quick testing:
 
-    $ CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder build -m --arm64 --x64 --dir
+    $ CSC_IDENTITY_AUTO_DISCOVERY=false npx electron-builder build -m --arm64 --x64 --dir
 
 - `CSC_IDENTITY_AUTO_DISCOVERY=false` prevents Code Signing and Notarizing
 - `--dir` prevents packaging

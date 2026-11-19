@@ -1,3 +1,4 @@
+const fs = require('fs')
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -56,6 +57,8 @@ module.exports = {
     new webpack.ProvidePlugin({
       'THREE': 'three'
     }),
-    new HtmlWebpackPlugin({template: './src/js/ar/src/index.html'})
+    new HtmlWebpackPlugin({
+      templateContent: fs.readFileSync(path.resolve(__dirname, '../../src/js/ar/src/index.html'), 'utf8')
+    })
   ]
 }
